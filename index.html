@@ -33,9 +33,40 @@
 </head>
 <body>
   <div class="box">
-    <h1>Hallo Welt!</h1>
-    <p>Dies ist eine einfache, mobile Testseite.</p>
+    <h1>Hallo Neugieriger!</h1>
+    <p>Du hast Tony, den Toilettengnom gefunden!</p>
+    <p>Herlichen Glückwunsch!</p>
     <img src="TonyToilette.png" alt="Tony der Toilettengnom" style="width: 100%; max-width: 300px; height: auto; margin-top: 1rem;">
   </div>
+  
+  <!-- Konfetti-Bibliothek laden -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Konfetti-Explosion beim Seitenladen -->
+  <script>
+    window.addEventListener('load', () => {
+      const duration = 2 * 1000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    });
+  </script>
 </body>
 </html>
