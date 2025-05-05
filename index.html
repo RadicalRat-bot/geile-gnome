@@ -37,7 +37,7 @@
     <p>Du hast Tony, den Toilettengnom gefunden!</p>
     <p>Herlichen Glückwunsch!</p>
     <img src="TonyToilette.png" alt="Tony der Toilettengnom" style="width: 100%; max-width: 300px; height: auto; margin-top: 1rem;">
-    <p>Besucher: <span id="Anzahl der Neugierigen">...</span></p>
+    <p>Besucher: <span id="neugierige-anzeige">...</span></p>
   </div>
 
   <!-- Besucher -->
@@ -45,7 +45,7 @@
     fetch('https://api.countapi.xyz/hit/tony-toilette/start')
       .then(res => res.json())
       .then(data => {
-        document.getElementById('Anzahl der Neugierigen').innerText = data.value;
+        document.getElementById('neugierige-anzeige').innerText = data.value;
       });
   </script>
   
