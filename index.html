@@ -37,7 +37,17 @@
     <p>Du hast Tony, den Toilettengnom gefunden!</p>
     <p>Herlichen Glückwunsch!</p>
     <img src="TonyToilette.png" alt="Tony der Toilettengnom" style="width: 100%; max-width: 300px; height: auto; margin-top: 1rem;">
+    <p>Besucher: <span id="Anzahl der Neugierigen">...</span></p>
   </div>
+
+  <!-- Besucher -->
+  <script>
+    fetch('https://api.countapi.xyz/hit/tony-toilette/start')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('visitor-count').innerText = data.value;
+      });
+  </script>
   
   <!-- Konfetti-Bibliothek laden -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
